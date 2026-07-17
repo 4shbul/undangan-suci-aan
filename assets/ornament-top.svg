@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#C7A15A;stop-opacity:0.3"/>
+      <stop offset="50%" style="stop-color:#C7A15A;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#C7A15A;stop-opacity:0.3"/>
+    </linearGradient>
+  </defs>
+  <path d="M0,60 Q150,0 300,60 Q450,120 600,60 Q750,0 900,60 Q1050,120 1200,60" fill="none" stroke="url(#goldGrad)" stroke-width="2"/>
+  <path d="M0,60 Q150,20 300,60 Q450,100 600,60 Q750,20 900,60 Q1050,100 1200,60" fill="none" stroke="url(#goldGrad)" stroke-width="1" opacity="0.5"/>
+  <circle cx="300" cy="60" r="4" fill="#C7A15A"/>
+  <circle cx="600" cy="60" r="6" fill="#C7A15A"/>
+  <circle cx="900" cy="60" r="4" fill="#C7A15A"/>
+  <path d="M580,50 Q600,30 620,50 Q600,70 580,50Z" fill="#C7A15A" opacity="0.6"/>
+  <path d="M590,55 Q600,40 610,55 Q600,70 590,55Z" fill="#C7A15A" opacity="0.8"/>
+</svg>

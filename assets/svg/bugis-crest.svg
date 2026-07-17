@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 120" fill="none">
+  <!-- Crest kerajaan Bugis: payung + pinisi + diamond lipa -->
+  <defs>
+    <linearGradient id="crestGold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#E3CB94"/>
+      <stop offset="100%" stop-color="#C7A15A"/>
+    </linearGradient>
+  </defs>
+  <!-- Payung -->
+  <path d="M50 8 C28 8 18 26 18 32 C18 34 24 34 50 34 C76 34 82 34 82 32 C82 26 72 8 50 8Z" fill="url(#crestGold)" opacity="0.92"/>
+  <path d="M50 8 V34" stroke="#7C2434" stroke-width="0.8" opacity="0.45"/>
+  <path d="M50 8 C38 12 28 22 22 32" stroke="#7C2434" stroke-width="0.6" opacity="0.35"/>
+  <path d="M50 8 C62 12 72 22 78 32" stroke="#7C2434" stroke-width="0.6" opacity="0.35"/>
+  <line x1="50" y1="34" x2="50" y2="52" stroke="#C7A15A" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- Lipa diamond -->
+  <path d="M50 52 L68 70 L50 88 L32 70 Z" fill="none" stroke="#C7A15A" stroke-width="1.4"/>
+  <path d="M50 58 L62 70 L50 82 L38 70 Z" fill="none" stroke="#E3CB94" stroke-width="0.8" opacity="0.8"/>
+  <circle cx="50" cy="70" r="3" fill="#C7A15A"/>
+  <!-- Pinisi simplified -->
+  <path d="M28 100 Q40 108 50 108 Q60 108 72 100 L66 104 Q56 110 50 110 Q44 110 34 104 Z" fill="#7C2434" opacity="0.75"/>
+  <line x1="42" y1="100" x2="42" y2="90" stroke="#C7A15A" stroke-width="1"/>
+  <line x1="58" y1="100" x2="58" y2="88" stroke="#C7A15A" stroke-width="1"/>
+  <path d="M42 91 L52 95 L42 98 Z" fill="#E3CB94" opacity="0.7"/>
+  <path d="M58 89 L70 94 L58 97 Z" fill="#E3CB94" opacity="0.65"/>
+</svg>

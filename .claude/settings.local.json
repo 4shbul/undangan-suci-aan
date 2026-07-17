@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3)",
+      "Bash(sed -i 's|assets/images/bride-hero\\\\.jpg|assets/images/bride-hero.svg|g' /home/bul/Pictures/undangan-suci-aan/index.html)",
+      "Bash(sed -i 's|assets/images/bride-portrait\\\\.jpg|assets/images/bride-portrait.svg|g' /home/bul/Pictures/undangan-suci-aan/index.html)",
+      "Bash(sed -i 's|assets/images/groom-portrait\\\\.jpg|assets/images/groom-portrait.svg|g' /home/bul/Pictures/undangan-suci-aan/index.html)",
+      "Bash(grep -E '\\(script\\\\.js|index\\\\.html\\)$')"
+    ]
+  }
+}

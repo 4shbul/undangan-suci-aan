@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <!-- Ukiran sudut Bugis / klasik -->
+  <path d="M6 6 H100" stroke="#C7A15A" stroke-width="1.8"/>
+  <path d="M6 6 V100" stroke="#C7A15A" stroke-width="1.8"/>
+  <path d="M6 22 H84" stroke="#E3CB94" stroke-width="0.9" opacity="0.75"/>
+  <path d="M22 6 V84" stroke="#E3CB94" stroke-width="0.9" opacity="0.75"/>
+  <path d="M6 36 H58" stroke="#C7A15A" stroke-width="0.55" opacity="0.55"/>
+  <path d="M36 6 V58" stroke="#C7A15A" stroke-width="0.55" opacity="0.55"/>
+  <!-- Diamond cluster -->
+  <path d="M48 18 L58 28 L48 38 L38 28 Z" fill="none" stroke="#C7A15A" stroke-width="1"/>
+  <path d="M48 22 L54 28 L48 34 L42 28 Z" fill="#C7A15A" opacity="0.25"/>
+  <path d="M18 48 L28 58 L18 68 L8 58 Z" fill="none" stroke="#C7A15A" stroke-width="1"/>
+  <circle cx="6" cy="6" r="2.8" fill="#C7A15A"/>
+  <circle cx="28" cy="28" r="2" fill="none" stroke="#C7A15A" stroke-width="0.8"/>
+  <!-- Leaf curl -->
+  <path d="M70 12 C78 18 80 28 74 36" stroke="#1D5D4F" stroke-width="0.8" opacity="0.45"/>
+  <path d="M12 70 C18 78 28 80 36 74" stroke="#1D5D4F" stroke-width="0.8" opacity="0.45"/>
+</svg>
