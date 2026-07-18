@@ -534,6 +534,19 @@ body.no-scroll {
   display: block;
 }
 
+.opening-names__single--groom,
+.profil-card__name {
+  white-space: nowrap;
+  overflow-wrap: normal;
+}
+
+@media (max-width: 480px) {
+  .opening-names__single--groom,
+  .profil-card__name {
+    white-space: normal;
+  }
+}
+
 .opening-names__and {
   display: block;
   font-family: var(--font-display);
@@ -969,6 +982,7 @@ body.no-scroll {
 }
 
 .profil-card__name {
+  display: block;
   font-size: clamp(1.3rem, 2.6vw, 1.75rem);
   margin-bottom: 0.6rem;
 }
@@ -978,20 +992,6 @@ body.no-scroll {
   color: var(--color-text-soft);
   margin-bottom: 0.9rem;
   line-height: 1.55;
-}
-
-.profil-card__social {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.85rem;
-  color: var(--color-secondary);
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--dur-fast);
-}
-
-.profil-card__social:hover {
-  border-color: var(--color-secondary);
 }
 
 /* ---------- 12. LOVE STORY / TIMELINE ---------- */
@@ -1248,16 +1248,9 @@ body.no-scroll {
   width: 100%;
   height: auto;
   display: block;
-}
-
-.masonry__item--tall img {
-  aspect-ratio: 3/4.2;
-  object-fit: cover;
-}
-
-.masonry__item:not(.masonry__item--tall) img {
-  aspect-ratio: 1/1;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
+  background: linear-gradient(145deg, #3a2818, #1a1008);
 }
 
 .masonry__item::after {
@@ -1747,35 +1740,6 @@ body.no-scroll {
   z-index: 1;
 }
 
-.footer__social {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 1;
-}
-
-.footer__social a {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 1px solid rgba(199, 161, 90, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.1rem;
-  transition:
-    background var(--dur-fast),
-    transform var(--dur-fast),
-    color var(--dur-fast);
-}
-
-.footer__social a:hover {
-  background: var(--color-primary);
-  color: var(--color-text);
-  transform: translateY(-4px);
-}
 
 .footer__copyright {
   font-size: 0.78rem;
