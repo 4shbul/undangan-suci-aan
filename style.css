@@ -944,7 +944,6 @@ body.no-scroll {
 }
 
 .profil-card__photo {
-  position: relative;
   width: 100%;
   aspect-ratio: 3/4;
   object-fit: cover;
@@ -952,7 +951,6 @@ body.no-scroll {
   border-radius: 50% 50% 46% 46% / 60% 60% 40% 40%;
   box-shadow: var(--shadow-soft);
   background: linear-gradient(145deg, #5c3a1e, #2d1a0a);
-  z-index: 1;
 }
 
 .profil-card__photo--bride {
@@ -966,7 +964,8 @@ body.no-scroll {
   height: calc(100% + 28px);
   pointer-events: none;
   opacity: 0.85;
-  z-index: -1;
+  border-radius: 50% 50% 46% 46% / 60% 60% 40% 40%;
+  overflow: hidden;
 }
 
 .profil-card--groom .profil-card__frame {
