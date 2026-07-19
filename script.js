@@ -564,8 +564,7 @@
     let isLooping = true;
     let pendingPlay = false;
 
-    // Soft instrumental placeholder — ganti VIDEO_ID dengan lagu pilihan pasangan
-    const VIDEO_ID = 'jfKfPfyJRdk';
+    const VIDEO_ID = 'fUTeJ5EDQIw';
 
     function createPlayer() {
       if (!window.YT || !window.YT.Player) return;
