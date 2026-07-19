@@ -270,7 +270,7 @@
     if (!el) return;
 
     // Wedding: Saturday, 08 August 2026, 08:00 WITA (UTC+8)
-    const targetDate = new Date('2026-08-08T08:00:00+08:00').getTime();
+    const targetDate = new Date('2026-08-08T12:00:00+08:00').getTime();
     const daysEl = qs('#cd-days');
     const hoursEl = qs('#cd-hours');
     const minutesEl = qs('#cd-minutes');
