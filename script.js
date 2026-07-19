@@ -84,7 +84,39 @@
   --------------------------------------------------- */
   function startAutoScroll() {
     const heroEl = qs('#hero');
-    if (heroEl) heroEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (!heroEl) return;
+
+    const targetY = heroEl.offsetTop;
+    const duration = 4000;
+    const startY = window.scrollY;
+    let startTime = null;
+    let stopped = false;
+
+    function stop() {
+      stopped = true;
+      window.removeEventListener('pointerdown', stop);
+      window.removeEventListener('wheel', stop);
+      window.removeEventListener('touchstart', stop);
+    }
+
+    window.addEventListener('pointerdown', stop, { once: true });
+    window.addEventListener('wheel', stop, { once: true });
+    window.addEventListener('touchstart', stop, { once: true });
+
+    function easeInOutQuad(t) {
+      return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+    }
+
+    function step(now) {
+      if (stopped) return;
+      if (!startTime) startTime = now;
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      window.scrollTo(0, startY + (targetY - startY) * easeInOutQuad(progress));
+      if (progress < 1) requestAnimationFrame(step);
+    }
+
+    requestAnimationFrame(step);
   }
 
   function initOpeningScreen() {

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — Kelola Tamu Undangan</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ADMIN DASHBOARD -->
+  <div id="admin-dashboard" class="admin-dashboard">
+    <header class="admin-header">
+      <div class="container">
+        <div class="admin-header__top">
+          <h1 class="admin-header__title">
+            <i class="fa-solid fa-users-gear"></i> Kelola Tamu
+          </h1>
+          <div class="admin-header__actions">
+            <a href="index.html" class="btn btn--outline">
+              <i class="fa-solid fa-eye"></i> Lihat Undangan
+            </a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="admin-main container">
+
+      <!-- ADD GUEST -->
+      <section class="admin-section">
+        <h2 class="admin-section__title">
+          <i class="fa-solid fa-user-plus"></i> Tambah Tamu
+        </h2>
+        <form id="add-guest-form" class="admin-form glass">
+          <div class="admin-form__row">
+            <div class="form-group admin-form__name">
+              <label for="guest-name-input">Nama Tamu</label>
+              <input type="text" id="guest-name-input" placeholder="Contoh: Bapak Dr. Ahmad Fauzi" required>
+            </div>
+            <div class="form-group admin-form__phone">
+              <label for="guest-phone-input">No. WhatsApp (opsional)</label>
+              <input type="text" id="guest-phone-input" placeholder="628xxxxxxxxxx">
+            </div>
+          </div>
+          <button type="submit" class="btn btn--primary btn--ripple">
+            <i class="fa-solid fa-plus"></i> Tambah
+          </button>
+        </form>
+      </section>
+
+      <!-- BULK ADD -->
+      <section class="admin-section">
+        <h2 class="admin-section__title">
+          <i class="fa-solid fa-list-check"></i> Tambah Banyak Sekaligus
+        </h2>
+        <form id="bulk-form" class="admin-form glass">
+          <div class="form-group">
+            <label for="bulk-names">Nama Tamu (satu per baris)</label>
+            <textarea id="bulk-names" rows="5" placeholder="Bapak Ahmad Fauzi&#10;Ibu Siti Rahmawati&#10;Keluarga Besar Bapak Andi"></textarea>
+          </div>
+          <button type="submit" class="btn btn--primary btn--ripple">
+            <i class="fa-solid fa-file-import"></i> Tambah Semua
+          </button>
+        </form>
+      </section>
+
+      <!-- WHATSAPP MESSAGE TEMPLATE -->
+      <section class="admin-section">
+        <h2 class="admin-section__title">
+          <i class="fa-solid fa-comment-dots"></i> Pesan WhatsApp
+        </h2>
+        <div class="admin-form glass">
+          <div class="form-group">
+            <label for="wa-template">Template Pesan</label>
+            <textarea id="wa-template" rows="4">Assalamu'alaikum Warahmatullahi Wabarakatuh 🌹
+
+Yth. {nama}
+
+Dengan memohon rahmat dan ridho Allah Subhanahu Wa Ta'ala, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dalam acara pernikahan kami:
+
+🤵 *Achmad Amzal Maulana, S.H.Int., M.I.P*
+👰 *Suci Ainun A. Said, S.Pi*
+
+📅 Sabtu, 08 Agustus 2026
+📍 Four Points Sheraton Makassar
+
+Berikut link undangan digital kami:
+{link}
+
+Merupakan suatu kehormatan dan kebahagiaan apabila Bapak/Ibu/Saudara/i berkenan hadir memberikan doa restu.
+
+Atas perhatiannya, kami ucapkan terima kasih. 🙏
+
+Wassalamu'alaikum Warahmatullahi Wabarakatuh
+*Aan & Suci*</textarea>
+            <p class="admin-form__hint">Gunakan <code>{nama}</code> untuk nama tamu dan <code>{link}</code> untuk link undangan.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- GUEST LIST -->
+      <section class="admin-section">
+        <div class="admin-section__header">
+          <h2 class="admin-section__title">
+            <i class="fa-solid fa-address-book"></i> Daftar Tamu
+          </h2>
+          <div class="admin-section__filters">
+            <input type="text" id="search-guest" class="admin-search" placeholder="Cari nama...">
+            <span id="guest-total" class="admin-badge">0 tamu</span>
+            <button id="btn-export" class="btn btn--outline" title="Export JSON">
+              <i class="fa-solid fa-download"></i>
+            </button>
+            <label class="btn btn--outline" title="Import JSON" style="cursor:pointer">
+              <i class="fa-solid fa-upload"></i>
+              <input type="file" id="import-file" accept=".json" hidden>
+            </label>
+          </div>
+        </div>
+        <div id="guest-list" class="guest-list"></div>
+        <p id="guest-empty" class="admin-empty" hidden>
+          <i class="fa-solid fa-users"></i><br>
+          Belum ada tamu. Tambahkan nama tamu di atas.
+        </p>
+      </section>
+
+    </main>
+
+    <!-- TOAST -->
+    <div id="toast" class="admin-toast" role="status" aria-live="polite" hidden></div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
