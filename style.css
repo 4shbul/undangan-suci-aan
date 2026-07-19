@@ -939,7 +939,7 @@ body.no-scroll {
 
 .profil-card__frame {
   position: relative;
-  width: min(280px, 80%);
+  width: min(340px, 85%);
   margin: 0 auto 1.5rem;
 }
 
