@@ -957,15 +957,47 @@ body.no-scroll {
   object-position: 70% 15%;
 }
 
-.profil-card__border {
+.profil-card__frame::after {
+  content: '';
   position: absolute;
-  inset: -14px;
-  width: calc(100% + 28px);
-  height: calc(100% + 28px);
-  pointer-events: none;
-  opacity: 0.85;
+  inset: -10px;
   border-radius: 50% 50% 46% 46% / 60% 60% 40% 40%;
-  overflow: hidden;
+  border: 1.5px solid var(--color-primary);
+  opacity: 0.7;
+  pointer-events: none;
+  box-shadow:
+    0 0 8px rgba(199, 161, 90, 0.5),
+    0 0 20px rgba(199, 161, 90, 0.3),
+    0 0 40px rgba(199, 161, 90, 0.15);
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 8px rgba(199, 161, 90, 0.5),
+      0 0 20px rgba(199, 161, 90, 0.3),
+      0 0 40px rgba(199, 161, 90, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 12px rgba(199, 161, 90, 0.7),
+      0 0 30px rgba(199, 161, 90, 0.45),
+      0 0 60px rgba(199, 161, 90, 0.25);
+  }
+}
+
+.profil-card__frame::before {
+  content: '';
+  position: absolute;
+  inset: -18px;
+  border-radius: 50% 50% 46% 46% / 60% 60% 40% 40%;
+  border: 0.7px solid var(--color-primary-light);
+  opacity: 0.45;
+  pointer-events: none;
+  box-shadow:
+    0 0 12px rgba(199, 161, 90, 0.4),
+    0 0 30px rgba(199, 161, 90, 0.2);
 }
 
 .profil-card--groom .profil-card__frame {

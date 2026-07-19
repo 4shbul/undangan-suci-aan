@@ -1,8 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 400" fill="none">
-  <ellipse cx="150" cy="200" rx="142" ry="188" stroke="#C7A15A" stroke-width="1.5" opacity="0.8"/>
-  <ellipse cx="150" cy="200" rx="136" ry="182" stroke="#E3CB94" stroke-width="0.7" opacity="0.5"/>
-  <circle cx="150" cy="14" r="3" fill="#C7A15A"/>
-  <circle cx="150" cy="386" r="3" fill="#C7A15A"/>
-  <circle cx="10" cy="200" r="3" fill="#C7A15A"/>
-  <circle cx="290" cy="200" r="3" fill="#C7A15A"/>
+  <path d="M150 6
+    A150 240 0 0 1 294 138
+    A138 160 0 0 1 266 366
+    A138 160 0 0 1 34 366
+    A150 240 0 0 1 6 138
+    Z"
+    stroke="#C7A15A" stroke-width="1.5" opacity="0.8"/>
+  <path d="M150 16
+    A144 234 0 0 1 284 138
+    A132 154 0 0 1 258 358
+    A132 154 0 0 1 42 358
+    A144 234 0 0 1 16 138
+    Z"
+    stroke="#E3CB94" stroke-width="0.7" opacity="0.5"/>
+  <circle cx="150" cy="6" r="3" fill="#C7A15A"/>
+  <circle cx="150" cy="394" r="3" fill="#C7A15A"/>
+  <circle cx="6" cy="138" r="3" fill="#C7A15A"/>
+  <circle cx="294" cy="138" r="3" fill="#C7A15A"/>
 </svg>
