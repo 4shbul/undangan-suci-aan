@@ -80,8 +80,13 @@
   }
 
   /* ---------------------------------------------------
-     2. OPENING SCREEN + MUSIC START
+     2. OPENING SCREEN + MUSIC START + AUTO-SCROLL
   --------------------------------------------------- */
+  function startAutoScroll() {
+    const heroEl = qs('#hero');
+    if (heroEl) heroEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
   function initOpeningScreen() {
     const openingScreen = qs('#opening-screen');
     const openBtn = qs('#open-invitation-btn');
@@ -114,6 +119,8 @@
       }, 1000);
 
       requestAnimationFrame(revealVisibleOnLoad);
+
+      setTimeout(startAutoScroll, 1200);
     });
   }
 
