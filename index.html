@@ -144,8 +144,8 @@
     <a href="#gallery" class="floating-nav__item" data-nav-target="gallery" aria-label="Galeri">
       <i class="fa-solid fa-images" aria-hidden="true"></i><span>Gallery</span>
     </a>
-    <a href="#rsvp" class="floating-nav__item" data-nav-target="rsvp" aria-label="Konfirmasi kehadiran">
-      <i class="fa-solid fa-envelope" aria-hidden="true"></i><span>RSVP</span>
+    <a href="#ucapan" class="floating-nav__item" data-nav-target="ucapan" aria-label="Ucapan dan doa">
+      <i class="fa-solid fa-comment-dots" aria-hidden="true"></i><span>Ucapan</span>
     </a>
   </nav>
 
@@ -477,79 +477,8 @@
       </div>
     </section>
 
-    <!-- ===================== RSVP ===================== -->
-    <section id="rsvp" class="rsvp section" aria-label="Form konfirmasi kehadiran">
-      <div class="container container--narrow">
-        <header data-animate="fade-up">
-          <p class="eyebrow">Konfirmasi</p>
-          <h2 class="section-title">RSVP</h2>
-          <div class="section-divider" aria-hidden="true">
-            <img src="assets/svg/divider-bugis.svg" alt="" width="280" height="36">
-          </div>
-        </header>
-
-        <p style="text-align:center;color:var(--color-text-soft);margin-bottom:0.5rem;" data-animate="fade-up">
-          Mohon konfirmasi kehadiran Anda sebelum tanggal <strong>01 Agustus 2026</strong>
-        </p>
-
-        <form id="rsvp-form" class="rsvp-form glass" data-animate="fade-up" novalidate>
-          <div class="form-group">
-            <label for="rsvp-nama">Nama Lengkap</label>
-            <input type="text" id="rsvp-nama" name="nama" required aria-required="true" autocomplete="name" placeholder="Masukkan nama lengkap Anda">
-            <span class="form-error" id="error-nama" role="alert"></span>
-          </div>
-
-          <div class="form-group">
-            <label for="rsvp-jumlah">Jumlah Tamu</label>
-            <select id="rsvp-jumlah" name="jumlah" required aria-required="true">
-              <option value="">Pilih jumlah tamu</option>
-              <option value="1">1 Orang</option>
-              <option value="2">2 Orang</option>
-              <option value="3">3 Orang</option>
-              <option value="4">4 Orang</option>
-              <option value="5">5 Orang</option>
-            </select>
-            <span class="form-error" id="error-jumlah" role="alert"></span>
-          </div>
-
-          <fieldset class="form-group">
-            <legend>Konfirmasi Kehadiran</legend>
-            <div class="radio-group" role="radiogroup" aria-required="true">
-              <label class="radio-option">
-                <input type="radio" name="kehadiran" value="hadir" required>
-                <span>Hadir</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="kehadiran" value="tidak-hadir">
-                <span>Tidak Hadir</span>
-              </label>
-              <label class="radio-option">
-                <input type="radio" name="kehadiran" value="ragu">
-                <span>Masih Ragu</span>
-              </label>
-            </div>
-            <span class="form-error" id="error-kehadiran" role="alert"></span>
-          </fieldset>
-
-          <div class="form-group">
-            <label for="rsvp-ucapan">Ucapan &amp; Doa</label>
-            <textarea id="rsvp-ucapan" name="ucapan" rows="4" maxlength="500" required aria-required="true" placeholder="Tuliskan ucapan dan doa untuk kami..."></textarea>
-            <span class="char-count"><span id="char-count">0</span>/500</span>
-            <span class="form-error" id="error-ucapan" role="alert"></span>
-          </div>
-
-          <button type="submit" class="btn btn--primary btn--ripple btn--block" aria-label="Kirim konfirmasi dan ucapan">
-            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
-            Kirim
-          </button>
-
-          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-
-    <!-- ===================== UCAPAN ===================== -->
-    <section id="ucapan" class="ucapan-list section" aria-label="Daftar ucapan dan doa">
+    <!-- ===================== UCAPAN & DOA ===================== -->
+    <section id="ucapan" class="ucapan-list section" aria-label="Ucapan dan doa">
       <div class="section-motif section-motif--soft" aria-hidden="true"></div>
       <div class="container container--narrow">
         <header data-animate="fade-up">
@@ -559,6 +488,23 @@
             <img src="assets/svg/divider-bugis.svg" alt="" width="280" height="36">
           </div>
         </header>
+
+        <form id="ucapan-form" class="rsvp-form glass" data-animate="fade-up" novalidate>
+          <div class="form-group">
+            <label for="ucapan-nama">Nama</label>
+            <input type="text" id="ucapan-nama" name="nama" required aria-required="true" placeholder="Masukkan nama Anda">
+          </div>
+          <div class="form-group">
+            <label for="ucapan-pesan">Ucapan &amp; Doa</label>
+            <textarea id="ucapan-pesan" name="ucapan" rows="4" maxlength="500" required aria-required="true" placeholder="Tuliskan ucapan dan doa untuk kami..."></textarea>
+            <span class="char-count"><span id="char-count">0</span>/500</span>
+          </div>
+          <button type="submit" class="btn btn--primary btn--ripple btn--block" aria-label="Kirim ucapan">
+            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            Kirim Ucapan
+          </button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
 
         <p id="ucapan-count" class="ucapan-count" data-animate="fade-up">0 ucapan telah diberikan</p>
 

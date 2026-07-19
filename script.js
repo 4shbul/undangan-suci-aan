@@ -393,15 +393,15 @@
   /* ---------------------------------------------------
      8. RSVP FORM + UCAPAN LIST
   --------------------------------------------------- */
-  function initRsvpForm() {
-    const form = qs('#rsvp-form');
+  function initUcapanForm() {
+    const form = qs('#ucapan-form');
     if (!form) return;
 
     const status = qs('#form-status');
     const ucapanList = qs('#ucapan-items');
     const ucapanCount = qs('#ucapan-count');
     const charCount = qs('#char-count');
-    const ucapanField = qs('#rsvp-ucapan');
+    const ucapanField = qs('#ucapan-pesan');
 
     if (ucapanField && charCount) {
       ucapanField.addEventListener('input', () => {
@@ -409,50 +409,14 @@
       });
     }
 
-    function setError(fieldId, message) {
-      const errEl = qs('#error-' + fieldId);
-      if (errEl) errEl.textContent = message || '';
-    }
-
-    function validate(data) {
-      let valid = true;
-      setError('nama', '');
-      setError('jumlah', '');
-      setError('kehadiran', '');
-      setError('ucapan', '');
-
-      if (!data.nama.trim()) {
-        setError('nama', 'Nama wajib diisi.');
-        valid = false;
-      }
-      if (!data.jumlah) {
-        setError('jumlah', 'Pilih jumlah tamu.');
-        valid = false;
-      }
-      if (!data.kehadiran) {
-        setError('kehadiran', 'Pilih status kehadiran.');
-        valid = false;
-      }
-      if (!data.ucapan.trim()) {
-        setError('ucapan', 'Tuliskan ucapan dan doa.');
-        valid = false;
-      }
-
-      return valid;
-    }
-
-    function statusLabel(value) {
-      if (value === 'hadir') return { text: 'Hadir', icon: 'fa-circle-check' };
-      if (value === 'tidak-hadir') return { text: 'Tidak Hadir', icon: 'fa-circle-xmark' };
-      return { text: 'Masih Ragu', icon: 'fa-circle-question' };
-    }
-
-    function addUcapanToList(data) {
+    function addUcapanToList(nama, ucapan) {
       if (!ucapanList) return;
+
+      const empty = qs('#ucapan-empty');
+      if (empty) empty.remove();
 
       const li = document.createElement('li');
       li.className = 'ucapan-item glass is-new';
-      const st = statusLabel(data.kehadiran);
 
       const head = document.createElement('div');
       head.className = 'ucapan-item__head';
@@ -465,20 +429,15 @@
       const meta = document.createElement('div');
       const nameEl = document.createElement('p');
       nameEl.className = 'ucapan-item__name';
-      nameEl.textContent = data.nama;
-
-      const statusEl = document.createElement('p');
-      statusEl.className = 'ucapan-item__status';
-      statusEl.innerHTML = `<i class="fa-solid ${st.icon}" aria-hidden="true"></i> ${st.text}`;
+      nameEl.textContent = nama;
 
       meta.appendChild(nameEl);
-      meta.appendChild(statusEl);
       head.appendChild(avatar);
       head.appendChild(meta);
 
       const textEl = document.createElement('p');
       textEl.className = 'ucapan-item__text';
-      textEl.textContent = data.ucapan;
+      textEl.textContent = ucapan;
 
       li.appendChild(head);
       li.appendChild(textEl);
@@ -494,27 +453,23 @@
       e.preventDefault();
 
       const formData = new FormData(form);
-      const data = {
-        nama: (formData.get('nama') || '').toString(),
-        jumlah: (formData.get('jumlah') || '').toString(),
-        kehadiran: (formData.get('kehadiran') || '').toString(),
-        ucapan: (formData.get('ucapan') || '').toString()
-      };
+      const nama = (formData.get('nama') || '').toString().trim();
+      const ucapan = (formData.get('ucapan') || '').toString().trim();
 
-      if (!validate(data)) {
+      if (!nama || !ucapan) {
         if (status) {
-          status.textContent = 'Mohon lengkapi data sebelum mengirim.';
+          status.textContent = 'Nama dan ucapan wajib diisi.';
           status.classList.remove('is-success');
         }
         return;
       }
 
-      addUcapanToList(data);
+      addUcapanToList(nama, ucapan);
       form.reset();
       if (charCount) charCount.textContent = '0';
 
       if (status) {
-        status.textContent = 'Terima kasih! Ucapan dan konfirmasi Anda telah terkirim.';
+        status.textContent = 'Terima kasih! Ucapan Anda telah terkirim.';
         status.classList.add('is-success');
       }
 
@@ -765,7 +720,7 @@
     initScrollEffects();
     initCountdown();
     initLightbox();
-    initRsvpForm();
+    initUcapanForm();
     initCopyButtons();
     initRipple();
     initMusicPlayerUI();
